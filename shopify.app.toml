@@ -1,0 +1,36 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "495dd12f5346c69c5965a63d72e6dc0e"
+application_url = "https://mature-mailman-portions-nevada.trycloudflare.com"
+embedded = true
+name = "snowboard-team-extention"
+handle = "snowboard-team-extention"
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "juliareis-test-store.myshopify.com"
+
+[webhooks]
+api_version = "2025-01"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/scopes_update" ]
+  uri = "/webhooks/app/scopes_update"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "write_products"
+
+[auth]
+redirect_urls = [
+  "https://mature-mailman-portions-nevada.trycloudflare.com/auth/callback",
+  "https://mature-mailman-portions-nevada.trycloudflare.com/auth/shopify/callback",
+  "https://mature-mailman-portions-nevada.trycloudflare.com/api/auth/callback"
+]
+
+[pos]
+embedded = false
